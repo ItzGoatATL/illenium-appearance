@@ -4,11 +4,13 @@ game "gta5"
 author "snakewiz & iLLeniumStudios"
 description "A flexible player customization script for FiveM servers."
 repository "https://github.com/iLLeniumStudios/illenium-appearance"
-version "main"
+version "v5.7.0"
 
 lua54 "yes"
 
 client_scripts {
+  '@qbx_core/modules/playerdata.lua', -- UNCOMMENT THIS IF YOUR USING QBOX ONLY!!!
+
   "game/constants.lua",
   "game/util.lua",
   "game/customization.lua",
