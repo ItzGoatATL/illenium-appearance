@@ -9,7 +9,7 @@ version "v5.7.0"
 lua54 "yes"
 
 client_scripts {
-  '@qbx_core/modules/playerdata.lua', -- UNCOMMENT THIS IF YOUR USING QBOX ONLY!!!
+  --'@qbx_core/modules/playerdata.lua', -- UNCOMMENT THIS IF YOUR USING QBOX ONLY!!!
 
   "game/constants.lua",
   "game/util.lua",
