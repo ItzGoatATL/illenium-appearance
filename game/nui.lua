@@ -114,6 +114,24 @@ RegisterNUICallback("appearance_save", function(appearance, cb)
     client.wearClothes(appearance, "body")
     client.wearClothes(appearance, "bottom")
     client.exitPlayerCustomization(appearance)
+
+    if GetResourceState('qbx_core') == 'started' then
+        local xcoreid = GetPlayerServerId(PlayerId())
+        local gPlayer = QBX.PlayerData
+        print(json.encode(gPlayer))
+        print(gPlayer.citizenid)
+        TriggerServerEvent('g_lifestyle:sv:getdatabase', xcoreid, gPlayer.citizenid)
+    elseif GetResourceState('qb-core') == 'started' then
+
+    elseif GetResourceState('es_extended') == 'started' then
+        local xcoreid = GetPlayerServerId(PlayerId())
+        local ESX = exports.es_extended:getSharedObject()
+        local gPlayer = ESX.GetPlayerData()
+        TriggerServerEvent('g_lifestyle:sv:getdatabase', xcoreid, gPlayer.identifier)
+    end
+
+
+
 end)
 
 RegisterNUICallback("appearance_exit", function(_, cb)
